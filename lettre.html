@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pour Sarah</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Audio : chanson de fond -->
+    <audio id="chanson" src="audio/musique1.mp3" loop></audio>
+    <!-- Audio : son qui passe une fois au choix -->
+    <audio id="son-choix" src="audio/son-choix.mp3"></audio>
+
+    <div class="enveloppe-container" id="enveloppe-container">
+      <img id="enveloppe" src="images/enveloppe.png" />
+    </div>
+
+    <div class="lettre-container" id="lettre-container">
+      <div class="lettre">
+        <img id="lettre-img" src="images/lettre.png" />
+      </div>
+      <div id="texte-choix" class="texte-choix"></div>
+      <div class="text-button">
+        <img id="oui" src="images/oui.png" />
+        <img id="non" src="images/non.png" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
