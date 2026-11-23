@@ -1,1 +1,1 @@
-https://fruitsrouges.github.io/boiteau/lettre.html
+https://fruitsrouges.github.io/boiteaux/lettre.html
