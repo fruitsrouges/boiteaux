@@ -215,7 +215,7 @@ img {
     font-size: 1.2em;
   }
   .debut-container {
-    padding-top: 30vh;
+    padding-top: 32vh;
   }
 
   .enveloppe-container,
@@ -248,7 +248,7 @@ img {
   .text-button {
     justify-content: center;
     gap: 25vw;
-    top: 50vh;
+    top: 38vh;
   }
 
   .text-button img {
