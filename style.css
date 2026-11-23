@@ -2,23 +2,44 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {
   min-height: 100vh;
   background-color: rgb(214, 255, 241);
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.debut-container {
+  padding-top: 40vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.debut-container p {
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
 .enveloppe-container {
   padding-top: 20vh;
   padding-bottom: 20vh;
-  display: flex;
+  display: none;
   justify-content: center;
   cursor: pointer;
+  opacity: 0;
   transition:
     opacity 1s ease,
     transform 2s ease;
+}
+
+.enveloppe-container.visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .enveloppe-container.fading-out {
@@ -36,13 +57,15 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
-.enveloppe-container img:hover {
+.enveloppe-container img:hover,
+.debut-container p:hover {
   transform: scale(1.02);
 }
 
 .lettre-container {
   padding-top: 20vh;
   display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -50,6 +73,7 @@ img {
   transition:
     opacity 0.5s ease,
     transform 1s ease;
+  position: relative;
 }
 
 .lettre-container.visible {
@@ -82,4 +106,28 @@ img {
 
 .text-button img:hover {
   transform: scale(1.1);
+}
+
+/* Le GIF en grand quand il remplace la lettre */
+#lettre-img.gif-actif {
+  height: 25vh;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Le texte qui apparaît avec le GIF */
+.texte-choix {
+  display: none;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 5vh;
+}
+
+.texte-choix.visible {
+  display: block;
+}
+
+.texte-choix a {
+  color: #ff72a1;
+  text-decoration: underline;
 }

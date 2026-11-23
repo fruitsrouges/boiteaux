@@ -1,6 +1,7 @@
 // Éléments
-const enveloppe = document.getElementById('enveloppe');
+const debutContainer = document.getElementById('debut-container');
 const enveloppeContainer = document.getElementById('enveloppe-container');
+const enveloppe = document.getElementById('enveloppe');
 const lettreContainer = document.getElementById('lettre-container');
 const lettreImg = document.getElementById('lettre-img');
 const btnOui = document.getElementById('oui');
@@ -9,16 +10,31 @@ const texteChoix = document.getElementById('texte-choix');
 
 // Audio
 const chanson = document.getElementById('chanson');
-const sonChoix = document.getElementById('son-choix');
+const sonChoix1 = document.getElementById('son-oui');
+const sonChoix2 = document.getElementById('son-non');
 
 // GIF
 const gifOui = 'images/excited.gif';
 const gifNon = 'images/fnaf.gif';
 
-// 1. Clic sur l'enveloppe → chanson démarre + lettre s'affiche
-enveloppe.addEventListener('click', () => {
-  // On lance la chanson (le clic = interaction utilisateur, donc autorisé par le navigateur)
+// Étape 1 → 2 : clic sur l'image de départ → affiche l'enveloppe
+debutContainer.addEventListener('click', () => {
   chanson.play();
+
+  setTimeout(() => {
+    debutContainer.style.display = 'none';
+    enveloppeContainer.style.display = 'flex';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        enveloppeContainer.classList.add('visible');
+      });
+    });
+  }, 500);
+});
+
+// Étape 2 → 3 : clic sur l'enveloppe → chanson + lettre
+enveloppe.addEventListener('click', () => {
 
   enveloppeContainer.classList.add('fading-out');
 
@@ -37,31 +53,35 @@ enveloppe.addEventListener('click', () => {
 // 2. Clic sur "oui"
 btnOui.addEventListener('click', () => {
   // Coupe la chanson
-  chanson.pause();
+  // chanson.pause();
   // Joue le son une fois
-  sonChoix.currentTime = 0;
-  sonChoix.play();
+  sonChoix1.currentTime = 0;
+  sonChoix1.play();
 
   // Remplace la lettre par le GIF en grand
   lettreImg.src = gifOui;
   lettreImg.classList.add('gif-actif');
 
+  document.querySelector('.text-button').style.display = 'none';
+
   // Affiche le texte avec le lien
   texteChoix.innerHTML =
-    'Merci d\'avoir dit oui ! 🎉 <a href="https://ton-lien.com" target="_blank">Clique ici</a>';
+    'Geumawooo,<a href="https://docs.google.com/forms/d/e/1FAIpQLSdefN1nr5uDG6pySmnKyHh6BZWXIFyhzscrEXJDGixlM5U6NQ/viewform?usp=dialog" target="_blank">clique ici!</a>';
   texteChoix.classList.add('visible');
 });
 
 // 3. Clic sur "non"
 btnNon.addEventListener('click', () => {
-  chanson.pause();
-  sonChoix.currentTime = 0;
-  sonChoix.play();
+  // chanson.pause();
+  sonChoix2.currentTime = 0;
+  sonChoix2.play();
 
   lettreImg.src = gifNon;
   lettreImg.classList.add('gif-actif');
 
+  document.querySelector('.text-button').style.display = 'none';
+
   texteChoix.innerHTML =
-    'Trop drôle 😂 <a href="https://ton-lien.com" target="_blank">Clique ici</a>';
+    'T\'as pas le choix,<a href="https://docs.google.com/forms/d/e/1FAIpQLSdefN1nr5uDG6pySmnKyHh6BZWXIFyhzscrEXJDGixlM5U6NQ/viewform?usp=dialog" target="_blank">clique!</a>';
   texteChoix.classList.add('visible');
 });
