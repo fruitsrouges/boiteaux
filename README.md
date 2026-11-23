@@ -1,3 +1,3 @@
 # Pour Sarah
 
-https://fruitsrouges.github.io/dear/
+https://fruitsrouges.github.io/dear/lettre.html
