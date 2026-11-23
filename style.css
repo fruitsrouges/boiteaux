@@ -211,7 +211,6 @@ img {
   }
 }
 
-/* ===== PHONE (≤ 600px) ===== */
 @media (max-width: 440px) {
   body {
     font-size: 1.2em;
