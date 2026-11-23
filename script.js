@@ -10,8 +10,10 @@ const texteChoix = document.getElementById('texte-choix');
 
 // Audio
 const chanson = document.getElementById('chanson');
-const sonChoix1 = document.getElementById('son-oui');
-const sonChoix2 = document.getElementById('son-non');
+const sonOui = document.getElementById('son-oui');
+const sonNon = document.getElementById('son-non');
+const sonPaper = document.getElementById('son-paper');
+const sonHover = document.getElementById('son-hover');
 
 // GIF
 const gifOui = 'images/excited.gif';
@@ -36,6 +38,9 @@ debutContainer.addEventListener('click', () => {
 // Étape 2 → 3 : clic sur l'enveloppe → chanson + lettre
 enveloppe.addEventListener('click', () => {
 
+  sonPaper.currentTime = 0;
+  sonPaper.play();
+
   enveloppeContainer.classList.add('fading-out');
 
   setTimeout(() => {
@@ -55,8 +60,8 @@ btnOui.addEventListener('click', () => {
   // Coupe la chanson
   // chanson.pause();
   // Joue le son une fois
-  sonChoix1.currentTime = 0;
-  sonChoix1.play();
+  sonOui.currentTime = 0;
+  sonOui.play();
 
   // Remplace la lettre par le GIF en grand
   lettreImg.src = gifOui;
@@ -73,8 +78,8 @@ btnOui.addEventListener('click', () => {
 // 3. Clic sur "non"
 btnNon.addEventListener('click', () => {
   // chanson.pause();
-  sonChoix2.currentTime = 0;
-  sonChoix2.play();
+  sonNon.currentTime = 0;
+  sonNon.play();
 
   lettreImg.src = gifNon;
   lettreImg.classList.add('gif-actif');
@@ -84,4 +89,5 @@ btnNon.addEventListener('click', () => {
   texteChoix.innerHTML =
     'T\'as pas le choix,<a href="https://docs.google.com/forms/d/e/1FAIpQLSdefN1nr5uDG6pySmnKyHh6BZWXIFyhzscrEXJDGixlM5U6NQ/viewform?usp=dialog" target="_blank">clique!</a>';
   texteChoix.classList.add('visible');
+
 });
