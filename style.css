@@ -146,6 +146,14 @@ img {
     width: 50vw;
   }
 
+  .debut-container {
+    padding-top: 35vh;
+  }
+  .enveloppe-container,
+  .lettre-container {
+    padding-top: 15vh;
+  }
+
   #lettre-img.gif-actif {
     height: 35vh;
   }
@@ -170,7 +178,13 @@ img {
   body {
     font-size: 1.4em;
   }
-
+  .debut-container {
+    padding-top: 28vh;
+  }
+  .enveloppe-container,
+  .lettre-container {
+    padding-top: 10vh;
+  }
   .enveloppe-container img,
   .lettre img {
     object-fit: contain;
@@ -178,7 +192,7 @@ img {
   }
 
   #lettre-img.gif-actif {
-    height: 40vh;
+    height: 35vh;
   }
 
   .texte-choix {
@@ -186,19 +200,19 @@ img {
   }
 
   .text-button {
-    margin-top: 0vh;
+    margin-top: -12vh;
     justify-content: center;
     gap: 15vw;
   }
 
   .text-button img {
-    height: 5%;
+    height: 6vh;
     object-fit: contain;
   }
 }
 
 /* ===== PHONE (≤ 600px) ===== */
-@media (max-width: 600px) {
+@media (max-width: 440px) {
   body {
     font-size: 1.2em;
   }
@@ -240,6 +254,6 @@ img {
   }
 
   .text-button img {
-    height: 2vh;
+    height: 2.5vh;
   }
 }
